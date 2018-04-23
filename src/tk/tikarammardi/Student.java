@@ -1,8 +1,9 @@
 package tk.tikarammardi;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Student {
+public class Student  {
     Scanner input = new Scanner(System.in);
     private String name;
     private String USN;
@@ -49,8 +50,13 @@ public class Student {
 
 
 
-    public void setMarks() {
-        System.out.println("Enter Student Marks\r");
-        this.marks = input.nextInt();
+    public void setMarks()  {
+        try {
+            System.out.println("Enter Student Marks\r");
+            this.marks = input.nextInt();
+        }catch (InputMismatchException e) {
+            System.out.println(" Invalid Input !!\nExpected Input is Integer");
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 package tk.tikarammardi;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Teacher {
@@ -59,8 +60,13 @@ public class Teacher {
     }
 
     public void setSalary() {
+        try {
+            System.out.println("Enter Teacher Salary\r");
+            this.salary = input.nextDouble();
+        }catch (InputMismatchException e) {
+            System.out.println(" Invalid Input Expecting Salary");
+        }
 
-        System.out.println("Enter Teacher Salary\r");
-        this.salary = input.nextDouble();
+
     }
 }
